@@ -48,6 +48,7 @@ alert('Welcome');
         echo '<h2>'.$user['name'].'</h2>';
         echo '<h5>'.$user['age'].'</h5>';
         echo '</div>';
+        echo 'hello';
     }
     ?>
 </div>
