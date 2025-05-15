@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Reaction;
 use App\Http\Requests\StoreReactionRequest;
 use App\Http\Requests\UpdateReactionRequest;
+use Illuminate\Support\Facades\DB;
 
 class ReactionController extends Controller
 {
@@ -13,7 +14,7 @@ class ReactionController extends Controller
      */
     public function index()
     {
-        //
+        return Reaction::with( ['reactionType','user'])->get();
     }
 
     /**
@@ -37,7 +38,7 @@ class ReactionController extends Controller
      */
     public function show(Reaction $reaction)
     {
-        //
+        return $reaction->load('user','reactionType');
     }
 
     /**

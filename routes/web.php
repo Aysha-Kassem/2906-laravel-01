@@ -36,8 +36,8 @@ Route::resources([
 ]);
 
 
-Route::prefix('dashboard')->controller(DashboardController::class)->group(function () {
-    Route::get('statistics', 'statistics');
+Route::prefix(prefix: 'dashboard')->controller(DashboardController::class)->group(function () {
+    Route::get('/statistics', 'statistics');
 });
 
 // Route::get('/init', function () {

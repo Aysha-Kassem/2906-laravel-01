@@ -13,7 +13,7 @@ class CommentController extends Controller
      */
     public function index()
     {
-        //
+        return Comment::with(['post','user','reply'])->get();
     }
 
     /**
@@ -37,7 +37,7 @@ class CommentController extends Controller
      */
     public function show(Comment $comment)
     {
-        //
+        return $comment->load(['post','user','reply']);
     }
 
     /**

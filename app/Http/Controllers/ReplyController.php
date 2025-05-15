@@ -13,7 +13,7 @@ class ReplyController extends Controller
      */
     public function index()
     {
-        //
+        return Reply::with( ['comments','user'])->get();
     }
 
     /**
@@ -37,7 +37,7 @@ class ReplyController extends Controller
      */
     public function show(Reply $reply)
     {
-        //
+        return $reply->load(  ['comments','user']);
     }
 
     /**

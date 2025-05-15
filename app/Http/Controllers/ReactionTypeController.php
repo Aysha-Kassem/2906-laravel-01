@@ -13,7 +13,7 @@ class ReactionTypeController extends Controller
      */
     public function index()
     {
-        //
+        return ReactionType::with( "reactions")->get();
     }
 
     /**
@@ -37,7 +37,7 @@ class ReactionTypeController extends Controller
      */
     public function show(ReactionType $reactionType)
     {
-        //
+        return $reactionType->load('reactions');
     }
 
     /**

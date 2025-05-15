@@ -13,7 +13,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $user = User::with(['post','comment','reaction','reply'])->get();
+        return $user;
     }
 
     /**
@@ -37,7 +38,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        //
+        return $user->load(['post','comment','reaction','reply']);
     }
 
     /**

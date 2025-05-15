@@ -13,7 +13,8 @@ class PostStatusController extends Controller
      */
     public function index()
     {
-        //
+        $postStatus = PostStatus::with('posts')->get();
+        return $postStatus;
     }
 
     /**
@@ -37,7 +38,7 @@ class PostStatusController extends Controller
      */
     public function show(PostStatus $postStatus)
     {
-        //
+        return $postStatus->load('posts');
     }
 
     /**
